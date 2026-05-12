@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+    <title>Exemplo HTML3 com JS</title>
+</head>
+<body bgcolor="#ffffff">
+
+    <h1>Lista de Compras (Gerada por JS)</h1>
+    
+    <!-- Local onde o JS vai inserir a lista -->
+    <div id="lista-container"></div>
+
+    <script type="text/javascript">
+        // 1. Criação do Array de elementos
+        var frutas = ["Maçã", "Banana", "Laranja", "Uva", "Melancia"];
+
+        // 2. Manipulação do Array e criação de HTML
+        var htmlLista = "<ul>";
+        
+        for (var i = 0; i < frutas.length; i++) {
+            htmlLista += "<li>" + frutas[i] + "</li>";
+        }
+        
+        htmlLista += "</ul>";
+
+        // 3. Inserindo no documento (compatível com navegadores antigos/DOM básico)
+        document.getElementById("lista-container").innerHTML = htmlLista;
+    </script>
+
+</body>
+</html>
