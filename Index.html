@@ -4,28 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Pessoa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .label {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Exemplo de Objeto Pessoa</h1>
-    <p>Abra o console do seu navegador (F12) para visualizar o objeto criado.</p>
+    <div class="card">
+        <h2>Dados da Pessoa</h2>
+        <!-- O JavaScript irá preencher as informações aqui -->
+        <div id="dadosPessoa"></div>
+    </div>
 
     <script>
-        // Criação do Objeto Pessoas em JavaScript
+        // 1. Criação do Objeto Pessoa
         const pessoa = {
             cpf: "123.456.789-00",
-            nome: "João",
+            nome: "Carlos",
             sobrenome: "Silva",
             sexo: "Masculino",
             estadoCivil: "Solteiro"
         };
 
-        // Exibindo o objeto no console para verificação
-        console.log(pessoa);
-
-        // Exibindo propriedades específicas no console
-        console.log("Nome: " + pessoa.nome);
-        console.log("Estado Civil: " + pessoa.estadoCivil);
+        // 2. Exibição dos dados na página (sem usar console.log)
+        const container = document.getElementById("dadosPessoa");
+        
+        container.innerHTML = `
+            <p><span class="label">CPF:</span> ${pessoa.cpf}</p>
+            <p><span class="label">Nome:</span> ${pessoa.nome}</p>
+            <p><span class="label">Sobrenome:</span> ${pessoa.sobrenome}</p>
+            <p><span class="label">Sexo:</span> ${pessoa.sexo}</p>
+            <p><span class="label">Estado Civil:</span> ${pessoa.estadoCivil}</p>
+        `;
     </script>
+
 </body>
 </html>
